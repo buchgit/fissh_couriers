@@ -6,6 +6,8 @@ import java.io.Serializable
 //Convert to Order
 
 class OrderDTO : Serializable{
+
+
     lateinit var number: String
 
 
