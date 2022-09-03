@@ -8,15 +8,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.fissh_couriers"
         minSdk 21
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,6 +23,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '\"https://courierdb.claramente.site/\"'
+        }
+        debug{
+            buildConfigField "String", "BASE_URL", '\"https://courierdb.claramente.site/\"'
         }
     }
     compileOptions {
@@ -32,6 +35,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -52,7 +58,8 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     //retrofit
-    implementation "com.squareup.retrofit2:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+//    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     //1. converters,  adapter (для авторизации)
     implementation "com.squareup.moshi:moshi:$moshi_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"

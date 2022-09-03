@@ -22,4 +22,5 @@ ext {
     moshi_version = "1.13.0"
     picasso_version = "2.5.2"
     retrofit_version = "2.9.0"
+    okhttp_version = "5.0.0"
 }
