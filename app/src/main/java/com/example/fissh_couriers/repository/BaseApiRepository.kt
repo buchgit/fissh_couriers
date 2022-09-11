@@ -11,7 +11,7 @@ import retrofit2.HttpException
  * не завершит свою работу.
  */
 
-abstract class BaseApiRepository {
+abstract class BaseRepository {
 
     suspend fun<T> safeApiCall(
         apiCall: suspend() -> T
