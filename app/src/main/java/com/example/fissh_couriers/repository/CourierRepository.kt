@@ -6,7 +6,6 @@ import com.example.fissh_couriers.model.sharedPreferences.AppSharedPreferences
 import javax.inject.Inject
 
 class CourierRepository @Inject constructor(
-    private val appSharedPreferences: AppSharedPreferences,
     private  val courierApi: CourierApi
 ): BaseRepository() {
 
