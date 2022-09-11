@@ -10,7 +10,7 @@ class CourierRepository @Inject constructor(
     private  val courierApi: CourierApi
 ): BaseRepository() {
 
-    suspend fun getAllOrder(): Resource<List<OrderDTO>> {
+    suspend fun getAllOrders(): Resource<List<OrderDTO>> {
         return safeApiCall { courierApi.getAllOrders() }
     }
 
